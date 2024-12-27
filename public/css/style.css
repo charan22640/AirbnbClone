@@ -1,0 +1,141 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#listingimg {
+  border-radius: 1.2rem !important;
+}
+
+#listingimg:hover {
+  opacity: 0.7;
+}
+
+.listing-card {
+  flex: 1 1 auto; /* Adjust flex properties */
+}
+
+.card-a {
+  display: block;
+  width: 100%; /* Make each card fill the full width of its column */
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  background-color: white;
+  height: 5rem;
+}
+
+.fa-compass {
+  color: red;
+  font-size: 2rem;
+}
+
+/* footer */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info {
+  bottom: 0;
+  width: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.f-info-socials {
+  padding-top: 0.5rem;
+}
+
+/* index */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.card-a {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* new */
+.add-btn {
+  background-color: red !important;
+  border: none !important;
+}
+
+/* viewpage */
+#viewimg {
+  border-radius: 2rem;
+  padding: 0;
+  margin: 0;
+  object-fit: cover !important;
+  height: 50vh;
+  width: 50vw;
+}
+
+/* Media query for medium and small screens */
+@media (max-width: 991px ) {
+  .navbar-expanded #filters,
+  .navbar-expanded .row {
+    margin-top: 2rem; /* Adjust this value as needed */
+  }
+}

@@ -1,0 +1,104 @@
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align to the left */
+  gap: 2rem; /* Space between filters */
+  align-items: center;
+}
+
+.filter {
+  text-align: center;
+  opacity: 0.7; /* Default opacity */
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease; /* Smooth transition for opacity and color */
+  border: none;
+  padding-right: 2rem !important;
+}
+
+.filter:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.filter i {
+  font-size: 1.5rem; /* Default icon size */
+  color: black; /* Default icon color (black) */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.filter.selected i {
+  color: red !important; /* Change icon color to red when selected */
+}
+
+.filter.selected {
+  opacity: 1; /* Ensure full opacity when selected */
+}
+
+.filter.selected p {
+  color: red; /* Change text color to red when selected */
+}
+
+/* Prevent hover from overriding selected styles */
+.filter.selected:hover i,
+.filter.selected:hover p {
+  color: red !important; /* Force color to stay red on hover for selected items */
+}
+
+
+
+/* Keep text color black when not selected */
+.filter p {
+  color: black; /* Text remains black even when the icon is active */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Link styling */
+.filter a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.tax-info {
+  display: none;
+}
+
+.tax-toggle {
+  position: relative;
+  bottom: 8px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 1rem;
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#flexSwitchCheckDefault:checked {
+  background-color: red;
+  border-color: red;
+}
+
+/* Adjust the color of the slider handle */
+#flexSwitchCheckDefault:checked::before {
+  background-color: white; /* Adjust as needed for contrast */
+}
+
+#flexSwitchCheckDefault:hover {
+  cursor: pointer;
+}
+
+/* Media query for medium screens (tablets) */
+@media (max-width: 991px) {
+  body.navbar-expanded #filters {
+      margin-top: 10rem; /* Apply margin-top only for medium screens */
+  }
+}
+
+/* Media query for small screens (mobile devices) */
+@media (max-width: 768px) {
+  body.navbar-expanded #filters {
+      margin-top: 13rem; /* Apply margin-top only for small screens */
+  }
+}

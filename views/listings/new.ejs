@@ -1,0 +1,90 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <div class="row">
+        <br><br>
+        <div class="col-8 offset-2">
+            <h1 class="display-4"><b>Create a New Listing</b></h1> <!-- Larger heading -->
+            <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label fs-5">Title</label> <!-- Increased font size -->
+                    <input type="text" class="form-control form-control-lg" placeholder="Enter Title" name="title" required> <!-- Larger input -->
+                    <div class="valid-feedback">Title looks good!</div>
+                </div>
+                <div class="invalid-feedback">Enter a valid Title</div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label fs-5">Description</label> <!-- Increased font size -->
+                    <textarea class="form-control form-control-lg" placeholder="Description" name="description" required></textarea> <!-- Larger textarea -->
+                    <div class="invalid-feedback">Please Enter Description</div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label fs-5">Price</label> <!-- Increased font size -->
+                        <input type="number" class="form-control form-control-lg" placeholder="1200" name="price" required> <!-- Larger input -->
+                        <div class="invalid-feedback">Enter Valid Price</div>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label fs-5">Country</label> <!-- Increased font size -->
+                        <input type="text" placeholder="India" name="country" class="form-control form-control-lg" required> <!-- Larger input -->
+                        <div class="invalid-feedback">Enter Country</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label fs-5">Upload Image</label> <!-- Increased font size -->
+                    <input type="file" class="form-control form-control-lg" placeholder="No File Chosen" name="listing[image]"> <!-- Larger input -->
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label fs-5">Location</label> <!-- Increased font size -->
+                    <input type="text" class="form-control form-control-lg" placeholder="Hyderabad" name="location" required> <!-- Larger input -->
+                    <div class="invalid-feedback">Enter Location</div>
+                </div>
+
+                <!-- Categories Section -->
+                <div class="mb-3">
+                    <label class="form-label fs-5">Categories</label><br> <!-- Increased font size -->
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Trending" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Trending</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Rooms" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Rooms</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Iconic Cities" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Iconic Cities</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Mountains" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Mountains</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Amazing Pools" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Amazing Pools</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Farms" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Farms</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Castle" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Castle</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Campaign" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Campaign</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="categories" value="Arctic" style="transform: scale(1.5);">
+                        <label class="form-check-label fs-4">Arctic</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-dark add-btn btn-lg">Submit</button> <!-- Larger button -->
+            </form>
+        </div>
+    </div>
+</body>

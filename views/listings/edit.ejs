@@ -1,0 +1,98 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+    <div class="row">
+        <br><br>
+         <div class="col-8 offset-2 ">
+             <h1>Edit Listing</h1>
+     <form action="/listings/<%= item._id %>/save?_method=PATCH" method="post" novalidate class="needs-validation" enctype="multipart/form-data"> 
+         <div class="mb-3"> <label for="title" class="form-label">Title</label>
+             <input type="text"class="form-control"  value=" <%= item.title %>" name="title" required >
+         
+         <div class="valid-feedback">Title looks good!</div> <div class="invalid-feedback">Enter a cache Title</div></div>
+         
+         <div class="mb-3"> <label for="description" class="form-label">Description</label>
+             <textarea  class="form-control"  name="description"   required > <%= item.description %></textarea> 
+         <div class="invalid-feedback">Please Enter Description</div></div>
+         <div class="row ">
+             <div class="mb-3 col-md-4"> <label for="price" class="form-label" >Price</label>
+             <input type="number" class="form-control" value="<%=item.price %>" name="price" required>
+         <div class="invalid-feedback">Enter Valid Price</div></div>
+             <div class="mb-3 col-md-8"><label for="country" class="form-label">Country</label>
+                 <input type="text" value="<%=item.country %>" name="country" class="form-control" required>
+             <div class="invalid-feedback">Enter Country </div></div>
+         
+         </div>
+         <div class="row mt-2">
+            <p ><u>Original Listing Image </u> </p>
+            <div class="col-6  mb-2 mt-1">
+              <img src="<%= item.image.url %>" alt="detail img" id="viewimg" class="img-fluid" style="max-height: 250px; width: 250px; object-fit: cover;">
+            </div>
+          </div>
+         <div class="mb-3">
+            <label for="image" class="form-label">upload New Image</label>
+            <input type="file" class="form-control form-control-lg" placeholder="No File Choosen" name="listing[image]"> <!-- Larger input -->
+        </div>
+         <!-- <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="text" class="form-control" value="<%= item.image.url %>" name="image" required></div> -->
+         <div class="mb-3"> <label for="location" class="form-label"> Location</label>
+             <input type="text" class="form-control" value="<%= item.location %>" name="location" required> <div class="invalid-feedback">Enter Location</div></div>
+        
+        
+<div class="mb-3">
+    <label class="form-label fs-6">Categories</label><br>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Trending" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Trending') ? 'checked' : '' %>>
+        <label class="form-check-label">Trending</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Rooms" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Rooms') ? 'checked' : '' %>>
+        <label class="form-check-label">Rooms</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Iconic Cities" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Iconic Cities') ? 'checked' : '' %>>
+        <label class="form-check-label">Iconic Cities</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Mountains" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Mountains') ? 'checked' : '' %>>
+        <label class="form-check-label">Mountains</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Amazing Pools" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Amazing Pools') ? 'checked' : '' %>>
+        <label class="form-check-label">Amazing Pools</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Farms" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Farms') ? 'checked' : '' %>>
+        <label class="form-check-label">Farms</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Castle" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Castle') ? 'checked' : '' %>>
+        <label class="form-check-label">Castle</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Campaign" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Campaign') ? 'checked' : '' %>>
+        <label class="form-check-label">Campaign</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" class="form-check-input" name="categories" value="Arctic" style="transform: scale(1.5);"
+            <%= item.categories && item.categories.includes('Arctic') ? 'checked' : '' %>>
+        <label class="form-check-label">Arctic</label>
+    </div>
+</div>
+
+        
+ 
+        
+         
+         <button class="btn btn-dark add-btn">Submit</button>
+     </form></div></div>
+</body>
