@@ -25,6 +25,8 @@
     }
 </style>
 
+ 
+
 <nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top py-3 mb-2">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="/listings"><i class="fa-solid fa-compass"></i></a>
@@ -50,11 +52,11 @@
             <!-- User Authentication Links -->
             <div class="navbar-nav ms-auto">
                 <a class="nav-link fs-5" href="/listings/new">Airbnb your home</a>
+
                 <% if (!curruser) { %>
                     <a class="nav-link fw-bold fs-5" href="/signup">SignUp</a>
                     <a class="nav-link fw-bold fs-5" href="/login">Login</a>
-                <% } %>
-                <% if (curruser) { %>
+                <% } else { %>
                     <a class="nav-link fw-bold fs-5" href="/logout">Logout</a>
                 <% } %>
             </div>
