@@ -1,4 +1,0 @@
-mvc framework
-geocoding utilisation
-nmaps
-cloudinary utilisation
