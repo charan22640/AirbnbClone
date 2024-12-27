@@ -11,7 +11,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
-const expressError = require("./utils/expressError.js"); // Make sure to import this if it's in use
+const expressError = require("./utils/expressError.js"); // Custom error handler
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -26,6 +26,7 @@ app.use(methodOverride("_method"));
 
 // Database connection
 const DB_URL = process.env.ATLAS_DB_URL;
+
 async function main() {
     try {
         await mongoose.connect(DB_URL);
@@ -118,4 +119,3 @@ app.get("/logout", (req, res) => {
 app.listen(8080, () => {
     console.log("Server is listening on port 8080");
 });
-
