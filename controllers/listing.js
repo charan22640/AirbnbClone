@@ -82,7 +82,8 @@ module.exports.findListingById = async (req, res) => {
             }
 
             console.log("Search results:", alllistings); // Log the search results
-            return res.render("listings/index.ejs", { alllistings });
+            return  res.render("listings/index.ejs", { alllistings, curruser: req.session.user });
+
         }
 
         // If id is a valid ObjectId, find the listing
