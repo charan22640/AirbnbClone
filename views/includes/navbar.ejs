@@ -1,54 +1,65 @@
-<style> .searchbtn{
-    background-color: red;
-    color: #ffff;
-    border-radius:25px;
-    padding: 0 1rem 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    }
-    .searchbtn:hover{
+<style>
+    .searchbtn {
         background-color: red;
-        color: #ffff;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
-#search{ 
-    display: inline !important;
-    margin-right: .5rem !important;
-}
-    .search-inp{
+
+    .searchbtn:hover {
+        background-color: darkred;
+        color: #fff;
+    }
+
+    #search {
+        display: inline !important;
+        margin-right: .5rem !important;
+    }
+
+    .search-inp {
         border-radius: 25px !important;
-        padding: 0.5rem 3rem 0.5rem 3rem;
+        padding: 0.5rem 3rem;
     }
 </style>
-<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top py-3 mb-2">
-  <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="/listings"><i class="fa-solid fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-              <a class="nav-link  fs-5" href="/listings">Explore</a>
-          </div>
 
-   <div class="navbar-nav ms-auto">
-    <form class="d-flex" role="search" method="GET" action="/listings/search">
-        <input class="form-control me-2 search-inp" type="search"  id="search-input" placeholder="Search destinations" aria-label="Search"  name="q">
-        <button class="btn searchbtn" type="submit"> <i class="fa-solid fa-magnifying-glass" id="search"></i> Search</button>
-      </form>
-   </div>
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link  fs-5" href="/listings/new">Airbnb your home</a>
-              <% if (!curruser) { %>
-                  <a class="nav-link fw-bold fs-5" href="/signup">SignUp</a>
-                  <a class="nav-link fw-bold fs-5" href="/login">Login</a>
-              <% } %>
-              <% if (curruser) { %>
-                  <a class="nav-link fw-bold fs-5" href="/logout">Logout</a>
-              <% } %>
-          </div>
-      </div>
-  </div>
+ 
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top py-3 mb-2">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/listings"><i class="fa-solid fa-compass"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link fs-5" href="/listings">Explore</a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="navbar-nav ms-auto">
+                <form class="d-flex" role="search" method="GET" action="/listings/search">
+                    <input class="form-control me-2 search-inp" type="search" id="search-input" placeholder="Search destinations" aria-label="Search" name="q">
+                    <button class="btn searchbtn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass" id="search"></i> Search
+                    </button>
+                </form>
+            </div>
+
+            <!-- User Authentication Links -->
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link fs-5" href="/listings/new">Airbnb your home</a>
+
+                <% if (!curruser) { %>
+                    <a class="nav-link fw-bold fs-5" href="/signup">SignUp</a>
+                    <a class="nav-link fw-bold fs-5" href="/login">Login</a>
+                <% } else { %>
+                    <a class="nav-link fw-bold fs-5" href="/logout">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
 </nav>
