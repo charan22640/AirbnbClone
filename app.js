@@ -79,9 +79,13 @@ passport.deserializeUser(User.deserializeUser());
 
 // Middleware to pass user data to views
 app.use((req, res, next) => {
-    res.locals.curruser = req.user || null; // Ensure curruser is either a user object or null
+    res.locals.curruser = null; // Initialize curruser to null by default
+    if (req.user) {
+        res.locals.curruser = req.user; // Update curruser if the user is authenticated
+    }
     next();
 });
+
 
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
